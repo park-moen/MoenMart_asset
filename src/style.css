@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
 
 * {
   box-sizing: border-box;
@@ -56,6 +57,7 @@ p {
 }
 
 /* header style */
+
 .header {
   width: 70%;
   margin: 0 auto;
@@ -91,6 +93,7 @@ p {
 }
 
 /* main style */
+
 .main {
   width: 90%;
   margin: 3rem auto;
@@ -107,6 +110,7 @@ p {
 
 .carousel-list > .carousel-item > img {
   width: 75%;
+  min-width: 70%;
 }
 
 .carousel-list > .prev-btn,
@@ -114,7 +118,7 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #555;
   opacity: 0;
   transition: all 0.5s linear;
@@ -136,30 +140,32 @@ p {
 .collection {
   margin: 5rem 6rem;
   display: flex;
-  gap: 40px;
+  gap: 5%;
 }
 
 .collection > .collection-img {
   order: 1;
-  width: 100%;
+  width: 150%;
 }
 
 .collection > .collection-img > img {
-  height: 220px;
+  /* height: 220px; */
+  width: 100%;
   object-fit: cover;
 }
 
 .collection > .collection-info {
   order: 0;
   font-weight: 300;
-  font-size: 10px;
+  font-size: 1rem;
   line-height: 15px;
   color: #333;
+  min-width: 300px;
 }
 
 .collection > .collection-info > a {
   display: inline-block;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin-top: 2.5rem;
   text-transform: uppercase;
   color: #555;
@@ -178,13 +184,13 @@ p {
 
 .best-product > .best-product-sub-title {
   display: inline-block;
-  font-size: 10px;
+  font-size: 1rem;
   font-weight: 200;
   margin: 1rem 0;
 }
 
 .best-product > .best-product-title {
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: 700;
   word-spacing: 5px;
 }
@@ -197,29 +203,47 @@ p {
   width: 300px;
 }
 
-.best-product-list > .best-product-item > img {
+.best-product-item > a {
+  display: inline-block;
+  width: 100%;
+  transition: all 0.2s ease-in;
+}
+
+.best-product-item > a:hover {
+  opacity: 0.7;
+}
+
+.best-product-item > a > img {
   width: 100%;
   height: 220px;
   transform: scale(0.7);
+  transition: all 0.2s ease-in;
 }
 
-/* .advertisement > .temp {
-  width: 100%;
+.best-product-item > a > img:hover {
+  transform: scale(0.8);
 }
 
-.advertisement > .temp > img {
-  width: 100%;
-  object-fit: contain;
-} */
+.best-product-item > a > div {
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'Lato', sans-serif;
+  text-transform: none;
+  color: #444;
+}
+
+.best-product-item > a > div > div {
+  padding-bottom: 1px;
+}
 
 .journal {
   width: 80%;
-  margin: 0 auto;
+  margin: 5rem auto;
 }
 
 .journal > .journal-title {
   text-align: center;
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: 700;
   word-spacing: 5px;
   margin-bottom: 3rem;
@@ -251,7 +275,7 @@ p {
 }
 
 .journal-item > .journal-item-info > .journal-item-title {
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
@@ -260,16 +284,95 @@ p {
 }
 
 .journal-item > .journal-item-info > .journal-item-detail {
-  font-size: 10px;
+  font-size: 1rem;
   font-weight: 300;
   font-family: 'Padauk', sans-serif;
   text-align: center;
   color: #727272;
 }
 
+/* footer style */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #222;
+  padding: 10px 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer > .footer-content {
+  word-spacing: 3px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.footer > .footer-title {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2vw;
+}
+
+.footer > .social-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 1.7rem;
+}
+
+.social-list > .social-item > a > i {
+  color: #fff;
+}
+
 @media screen and (max-width: 800px) {
-  body {
-    background-color: aqua;
+  .header {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+  }
+
+  .title {
+    line-height: 4rem;
+    padding: 0;
+  }
+
+  .nav .nav-list {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-list > .carousel-item > img {
+    width: 100%;
+  }
+
+  .collection {
+    margin: 30px 50px;
+    flex-direction: column;
+  }
+
+  .collection-info > p {
+    font-size: 1.5rem;
+    line-height: 150%;
+  }
+
+  .collection > .collection-info > a {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .collection > .collection-img {
+    width: 100%;
   }
 }
 
