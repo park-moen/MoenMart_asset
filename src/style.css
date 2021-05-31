@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
-
 * {
   box-sizing: border-box;
   font-family: 'Archivo', sans-serif;
@@ -81,7 +80,7 @@ p {
 
 .nav .nav-list > .item {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: 300;
   opacity: 0.7;
 }
@@ -90,6 +89,85 @@ p {
   padding-bottom: 2px;
   border-bottom: 1.5px solid #000;
   opacity: 1;
+}
+
+.nav-items {
+  margin-right: 20px;
+}
+
+.nav-items > li {
+  display: inline-block;
+}
+
+.nav-items > li > a {
+  line-height: 60px;
+  padding: 0 30px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.nav-items > li > a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.navicon {
+  cursor: pointer;
+  height: 60px;
+  padding: 28px 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.navicon-bar {
+  background: #333;
+  display: block;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+  width: 20px;
+  height: 3px;
+}
+
+.navicon-bar::before,
+.navicon-bar::after {
+  background-color: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+}
+
+.navicon-bar::before {
+  top: -7px;
+}
+
+.navicon-bar::after {
+  top: 7px;
+}
+
+.nav-toggle:checked ~ .navicon > .navicon-bar {
+  background-color: transparent;
+}
+
+.nav-toggle:checked ~ .navicon > .navicon-bar::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-toggle:checked ~ .navicon > .navicon-bar::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.navicon {
+  display: none;
 }
 
 /* main style */
@@ -138,29 +216,31 @@ p {
 }
 
 .collection {
-  margin: 5rem 6rem;
+  margin: 5rem 12.5%;
   display: flex;
+  justify-content: space-around;
   gap: 5%;
 }
 
 .collection > .collection-img {
+  flex-grow: 1;
   order: 1;
-  width: 150%;
+  width: 300px;
 }
 
 .collection > .collection-img > img {
-  /* height: 220px; */
   width: 100%;
   object-fit: cover;
 }
 
 .collection > .collection-info {
+  flex-grow: 1;
   order: 0;
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 15px;
+  font-size: 1.3rem;
+  line-height: 150%;
   color: #333;
-  min-width: 300px;
+  width: 350px;
 }
 
 .collection > .collection-info > a {
@@ -180,23 +260,25 @@ p {
   margin: 0 3rem;
   text-align: center;
   text-transform: uppercase;
+  /* width: 100%; */
 }
 
 .best-product > .best-product-sub-title {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 200;
   margin: 1rem 0;
 }
 
 .best-product > .best-product-title {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   word-spacing: 5px;
 }
 
 .best-product > .best-product-list {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .best-product-list > .best-product-item {
@@ -225,7 +307,7 @@ p {
 }
 
 .best-product-item > a > div {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 100;
   font-family: 'Lato', sans-serif;
   text-transform: none;
@@ -233,27 +315,26 @@ p {
 }
 
 .best-product-item > a > div > div {
-  padding-bottom: 1px;
+  padding-bottom: 3px;
 }
 
 .journal {
-  width: 80%;
-  margin: 5rem auto;
+  width: 90%;
+  margin: 6rem auto;
 }
 
 .journal > .journal-title {
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
   word-spacing: 5px;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   text-transform: uppercase;
 }
 
 .journal > .journal-list {
   display: flex;
-  gap: 100px;
-  /* border: 1px solid #000; */
+  justify-content: space-around;
 }
 
 .journal-list > .journal-item {
@@ -275,7 +356,7 @@ p {
 }
 
 .journal-item > .journal-item-info > .journal-item-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
@@ -284,7 +365,7 @@ p {
 }
 
 .journal-item > .journal-item-info > .journal-item-detail {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   font-family: 'Padauk', sans-serif;
   text-align: center;
@@ -296,9 +377,9 @@ p {
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 150px;
   background-color: #222;
   padding: 10px 0;
   color: #fff;
@@ -309,13 +390,13 @@ p {
   word-spacing: 3px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 100;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .footer > .footer-title {
   margin-top: 5px;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2vw;
 }
@@ -324,7 +405,7 @@ p {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 
 .social-list > .social-item > a > i {
@@ -344,7 +425,40 @@ p {
   }
 
   .nav .nav-list {
-    display: none;
+    /* transform: translateX(110%); */
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+
+  .navicon {
+    display: block;
+  }
+
+  .nav-toggle:checked ~ .nav-list {
+    /* transform: translateX(0); */
+    opacity: 1;
+    position: fixed;
+    z-index: 2;
+    top: 6rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ededed;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px 35px;
+  }
+
+  .nav > .nav-list > .item:hover {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .nav-list > .item > a {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding: 10px 0;
   }
 
   .main {
@@ -361,6 +475,10 @@ p {
     flex-direction: column;
   }
 
+  .collection > .collection-info {
+    width: 100%;
+  }
+
   .collection-info > p {
     font-size: 1.5rem;
     line-height: 150%;
@@ -374,10 +492,37 @@ p {
   .collection > .collection-img {
     width: 100%;
   }
+
+  .journal {
+    width: 90%;
+    margin: 30px 50px;
+  }
+
+  .journal-list > .journal-item {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .collection > .collection-info {
+    font-size: 1rem;
+  }
+
+  .journal {
+    width: 90%;
+    margin: 30px 30px;
+  }
+
+  .journal > .journal-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .journal-list > .journal-item {
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  body {
-    background-color: lightpink;
-  }
 }
