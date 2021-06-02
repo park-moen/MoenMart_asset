@@ -427,6 +427,7 @@ p {
   .nav .nav-list {
     /* transform: translateX(110%); */
     opacity: 0;
+    display: block;
     transition: opacity 0.2s linear;
   }
 
@@ -444,8 +445,6 @@ p {
     left: 0;
     bottom: 0;
     background-color: #ededed;
-    flex-direction: column;
-    justify-content: flex-start;
     padding: 15px 35px;
   }
 
