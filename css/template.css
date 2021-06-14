@@ -1,0 +1,46 @@
+/* shop List */
+.shop-list {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.shop-item {
+  width: 20rem;
+  flex-grow: 1;
+}
+
+.image-box {
+  display: flex;
+  justify-content: center;
+}
+
+.image-box > img {
+  width: 100%;
+}
+
+.cost-detail {
+  text-align: center;
+  padding: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.cost-detail > h3 {
+  font-size: 1.7rem;
+  font-family: 'Padauk', sans-serif;
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+
+.cost-detail > span {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* lookbook List */

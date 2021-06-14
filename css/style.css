@@ -45,6 +45,7 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  padding: 0;
 }
 
 p {
@@ -62,11 +63,11 @@ p {
   margin: 0 auto;
   font-family: 'Archivo', sans-serif;
   padding: 3rem;
-  height: 11rem;
+  height: 17rem;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   text-align: center;
   padding-bottom: 3rem;
@@ -76,37 +77,40 @@ p {
 .nav .nav-list {
   display: flex;
   justify-content: space-around;
+  margin: 0;
 }
 
 .nav .nav-list > .item {
   text-transform: uppercase;
-  font-size: 1.5rem;
-  font-family: 300;
+  /* font-family: 300; */
   opacity: 0.7;
 }
 
-.nav .nav-list > .item:hover {
+/* .nav .nav-list > .item button:hover {
   padding-bottom: 2px;
   border-bottom: 1.5px solid #000;
   opacity: 1;
-}
+} */
 
-.nav-items {
+.nav-list {
   margin-right: 20px;
 }
 
-.nav-items > li {
+.nav-list > li {
   display: inline-block;
 }
 
-.nav-items > li > a {
-  line-height: 60px;
-  padding: 0 30px;
-  color: rgba(0, 0, 0, 0.4);
+.nav-list > li > button {
+  text-transform: uppercase;
+  line-height: 40px;
+  padding: 0 5px;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.nav-items > li > a:hover {
-  color: rgba(0, 0, 0, 0.8);
+.nav-list > li > button:hover {
+  color: #000;
+  border-bottom: 2.5px solid #000;
 }
 
 .navicon {
@@ -425,9 +429,10 @@ p {
   }
 
   .nav .nav-list {
-    /* transform: translateX(110%); */
     opacity: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     transition: opacity 0.2s linear;
   }
 
@@ -436,7 +441,6 @@ p {
   }
 
   .nav-toggle:checked ~ .nav-list {
-    /* transform: translateX(0); */
     opacity: 1;
     position: fixed;
     z-index: 2;
@@ -448,12 +452,11 @@ p {
     padding: 15px 35px;
   }
 
-  .nav > .nav-list > .item:hover {
+  .nav > .nav-list > .item button:hover {
     border-bottom: none;
-    padding: 0;
   }
 
-  .nav-list > .item > a {
+  .nav-list > .item > button {
     display: inline-block;
     font-size: 2.2rem;
     font-weight: 500;

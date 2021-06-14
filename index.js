@@ -1,9 +1,24 @@
 require('./css/style.css');
+require('./css/template.css');
 
-// File import
+const { historyRouterPush } = require('./router');
 
-// DOM
-const $container = document.querySelector('.container');
+const $main = document.querySelector('.main');
+
+// $main.innerHTML = ItemList;
+
+window.onload = () => {
+  const historyLinker = document.querySelectorAll('.item > button');
+
+  [...historyLinker].forEach(el => {
+    el.addEventListener('click', e => {
+      const pathName = e.target.getAttribute('route');
+
+      historyRouterPush(pathName, $main);
+    });
+  });
+};
+
 const $navToggle = document.querySelector('.nav-toggle');
 
 $navToggle.addEventListener('change', e => {
