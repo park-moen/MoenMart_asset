@@ -72,6 +72,7 @@ p {
   text-align: center;
   padding-bottom: 3rem;
   color: #333;
+  cursor: pointer;
 }
 
 .nav .nav-list {

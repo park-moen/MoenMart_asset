@@ -1,18 +1,21 @@
+const mainViewTemplate = require('./pages/mainView.hbs');
 const itemListTemplate = require('./pages/itemList.hbs');
 const lookbookTemplate = require('./pages/lookBook.hbs');
 
+const MainView = mainViewTemplate();
 const ItemList = itemListTemplate();
 const LookBook = lookbookTemplate();
 
 const routes = {
+  '/': MainView,
   '/shop': ItemList,
   '/lookbook': LookBook,
 };
 
-// function initialRoutes(el) {
-//   renderHTML(el, routes['/show']);
-//   window.onpopstate = () => renderHTML(el, routes[window.location.pathname]);
-// }
+function initialRoutes(el) {
+  renderHTML(el, routes['/']);
+  window.onpopstate = () => renderHTML(el, routes[window.location.pathname]);
+}
 
 function historyRouterPush(pathName, el) {
   window.history.pushState({}, pathName, window.location.origin + pathName);
@@ -28,5 +31,5 @@ function renderHTML(el, route) {
 
 module.exports = {
   historyRouterPush,
-  ItemList,
+  initialRoutes,
 };
