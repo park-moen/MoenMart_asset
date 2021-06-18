@@ -21,7 +21,7 @@ module.exports = {
       filename: 'index.html', // output file name
       template: 'index.html', // template file name
     }),
-    new MiniCssExtractPlugin({ filename: 'app.css' }),
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['dist'],
     }),
