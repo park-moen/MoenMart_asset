@@ -4,7 +4,7 @@ module.exports = class Product extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
-        content: {
+        title: {
           type: Sequelize.STRING(20),
           allowNull: false,
         },
@@ -14,14 +14,6 @@ module.exports = class Product extends Sequelize.Model {
         },
         price: {
           type: Sequelize.INTEGER.UNSIGNED,
-          allowNull: false,
-        },
-        count: {
-          type: Sequelize.INTEGER.UNSIGNED,
-          allowNull: false,
-        },
-        checked: {
-          type: Sequelize.BOOLEAN,
           allowNull: false,
         },
       },
