@@ -1,7 +1,7 @@
-require('./css/style.css');
-require('./css/template.css');
+require('../css/style.css');
+require('../css/template.css');
 
-const { historyRouterPush, initialRoutes } = require('./router');
+const { historyRouterPush, initialRoutes } = require('./utils/router');
 
 // DOM
 const $main = document.querySelector('.main');

@@ -2,27 +2,26 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require('path');
 
 dotenv.config();
 const apiRouters = require('./routes/apiRouters');
-const { sequelize } = require('./models');
 
 const app = express();
-sequelize
-  .sync({ force: false })
-  .then(() => {
-    console.log('데이터베이스 연결 성공');
-  })
-  .catch(err => {
-    console.error(err);
-  });
 
 app.set('port', process.env.PORT || 8001);
+
+app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+
+app.use('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './dist/index.html'));
+});
 
 app.use('/', apiRouters);
 

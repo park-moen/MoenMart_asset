@@ -1,13 +1,16 @@
 const express = require('express');
-const { Product } = require('../models');
+const mysql = require('mysql2');
+const dbconfig = require('../config/database');
+const connection = mysql.createConnection(dbconfig);
 
 const router = express.Router();
 
-router.get('./shop', async (req, res, next) => {
-  try {
-    const products = await Product.findAll();
-    res.json(products);
-  } catch (err) {}
+router.get('/shop', (req, res, next) => {
+  connection.query('SELECT * from products', (error, rows) => {
+    if (error) throw error;
+
+    res.send(rows);
+  });
 });
 
 module.exports = router;
