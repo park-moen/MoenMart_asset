@@ -1,6 +1,6 @@
-const mainViewTemplate = require('./pages/mainView.hbs');
-const itemListTemplate = require('./pages/itemList.hbs');
-const lookbookTemplate = require('./pages/lookBook.hbs');
+const mainViewTemplate = require('../../pages/mainView.hbs');
+const itemListTemplate = require('../../pages/itemList.hbs');
+const lookbookTemplate = require('../../pages/lookBook.hbs');
 
 const data = [
   {
@@ -52,6 +52,12 @@ const data = [
     price: '0.99',
   },
 ];
+
+fetch('http://localhost:8001/shop')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  });
 
 const MainView = mainViewTemplate();
 const ItemList = itemListTemplate(data);
