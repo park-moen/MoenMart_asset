@@ -53,12 +53,6 @@ const data = [
   },
 ];
 
-fetch('http://localhost:8001/shop')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data);
-  });
-
 const MainView = mainViewTemplate();
 const ItemList = itemListTemplate(data);
 const LookBook = lookbookTemplate();

@@ -1,29 +1,19 @@
 const express = require('express');
-const morgan = require('morgan');
 const dotenv = require('dotenv');
-const cors = require('cors');
 const path = require('path');
 
 dotenv.config();
-const apiRouters = require('./routes/apiRouters');
 
 const app = express();
 
-app.set('port', process.env.PORT || 8001);
+app.set('port', process.env.PORT || 7001);
 
 app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cors());
-
-app.use('/home', (req, res) => {
+app.use('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dist/index.html'));
 });
-
-app.use('/', apiRouters);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

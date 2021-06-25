@@ -16,8 +16,6 @@ $navToggle.addEventListener('change', e => {
 window.onload = async () => {
   initialRoutes($main);
 
-  console.log(requireData);
-
   const res = await requireData.get('http://localhost:8001/shop');
 
   console.log(res.data);
