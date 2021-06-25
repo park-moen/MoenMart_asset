@@ -74,7 +74,8 @@ function initialRoutes(el) {
   window.onpopstate = () => renderHTML(el, routes[window.location.pathname]);
 }
 
-function historyRouterPush(pathName, el) {
+function historyRouterPush(pathName, el, data) {
+  console.log(data);
   window.history.pushState({}, pathName, window.location.origin + pathName);
   console.log();
 

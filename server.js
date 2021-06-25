@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-app.use('/', (req, res) => {
+app.use('/home', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dist/index.html'));
 });
 
