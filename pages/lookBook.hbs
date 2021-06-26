@@ -1,3 +1,164 @@
-<main>
-  <div>하이</div>
-</main>
+{{! <ul class='lookbook-list'>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1592104806528-c1b931297078?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section class='contents-wrapper'>
+      <h3>FRIEND OF SANDQVIST: ALIZÉ DEMANGE</h3>
+      <span>조회수</span>
+      <p>내용</p>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1611315811928-f394442507c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1571752955533-04b10bf3d5fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'
+            alt=''
+          />
+
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1533637360090-520dffd5e8d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2801&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1572112686886-5c0b5bc8dacd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=716&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1553782376-b2e8256ab838?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+  <li class='lookbook-item'>
+    <div class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=724&q=80'
+            alt=''
+          />
+        </div>
+      </div>
+    </div>
+    <section>
+      <h3>하이</h3>
+      <span>바이</span>
+    </section>
+  </li>
+</ul> }}
+
+<ul class="lookbook-list">
+  {{#.}}
+  <li class='lookbook-item'>
+    <section class='thumbnail-wrapper'>
+      <div class='thumbnail'>
+        <div class='thumbnail-centered'>
+          <img
+            class='thumbnail-img'
+            src={{image}}
+            alt=''
+          />
+        </div>
+      </div>
+    </section>
+    <section class="contents-wrapper">
+      <h3>{{title}}</h3>
+      <span>{{views}}</span>
+      <p>{{desc}}</p>
+    </section>
+  </li>
+  {{/.}}
+</ul>
