@@ -14,8 +14,14 @@ $navToggle.addEventListener('change', e => {
   else document.body.style.overflow = 'visible';
 });
 
-window.onload = () => {
-  initialRoutes($main);
+window.onload = async () => {
+  const initialPathName = window.location.pathname;
+
+  const initialData = await requireData.get(
+    `http://localhost:8001${initialPathName}`
+  );
+
+  initialRoutes($main, initialPathName, initialData.data);
 
   const $historyLinker = document.querySelectorAll('.item > button');
   const $title = document.querySelector('.title');
@@ -24,14 +30,18 @@ window.onload = () => {
     el.addEventListener('click', async e => {
       const pathName = e.target.getAttribute('route');
 
+      // shop 링크 클릭
       if (pathName === '/shop') {
         const res = await requireData.get('http://localhost:8001/shop');
         historyRouterPush(pathName, $main, res.data);
-      } else if (pathName === '/lookbook') {
+      }
+      // lookbook 링크 클릭
+      else if (pathName === '/lookbook') {
         const res = await requireData.get('http://localhost:8001/lookbook');
-        console.log(res.data);
         historyRouterPush(pathName, $main, res.data);
-      } else {
+      }
+      // 홈 링크 클릭
+      else {
         historyRouterPush(pathName, $main);
       }
     });
