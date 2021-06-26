@@ -1,5 +1,6 @@
 require('../css/style.css');
-require('../css/template.css');
+require('../css/shop.css');
+require('../css/lookbook.css');
 
 const { historyRouterPush, initialRoutes } = require('./utils/router');
 const requireData = require('./utils/requestData');
@@ -13,22 +14,26 @@ $navToggle.addEventListener('change', e => {
   else document.body.style.overflow = 'visible';
 });
 
-window.onload = async () => {
+window.onload = () => {
   initialRoutes($main);
-
-  const res = await requireData.get('http://localhost:8001/shop');
-
-  console.log(res.data);
 
   const $historyLinker = document.querySelectorAll('.item > button');
   const $title = document.querySelector('.title');
 
   [...$historyLinker].forEach(el => {
-    el.addEventListener('click', e => {
+    el.addEventListener('click', async e => {
       const pathName = e.target.getAttribute('route');
-      console.log(pathName);
 
-      historyRouterPush(pathName, $main, data);
+      if (pathName === '/shop') {
+        const res = await requireData.get('http://localhost:8001/shop');
+        historyRouterPush(pathName, $main, res.data);
+      } else if (pathName === '/lookbook') {
+        const res = await requireData.get('http://localhost:8001/lookbook');
+        console.log(res.data);
+        historyRouterPush(pathName, $main, res.data);
+      } else {
+        historyRouterPush(pathName, $main);
+      }
     });
   });
 

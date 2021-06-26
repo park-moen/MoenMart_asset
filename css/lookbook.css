@@ -1,0 +1,50 @@
+.lookbook-list {
+  width: 70%;
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  row-gap: 60px;
+  /* column-gap: 2px; */
+}
+
+.lookbook-item {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* border: 1px solid; */
+  /* margin: 0 0 -1px -1px; */
+}
+
+.thumbnail-wrapper {
+  width: 250px;
+}
+
+.thumbnail {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.thumbnail-centered {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.thumbnail-img {
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.contents-wrapper {
+  border: 1px solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
