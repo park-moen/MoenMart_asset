@@ -38,6 +38,7 @@ window.onload = async () => {
       // lookbook 링크 클릭
       else if (pathName === '/lookbook') {
         const res = await requireData.get('http://localhost:8001/lookbook');
+        console.log(res.data);
         historyRouterPush(pathName, $main, res.data);
       }
       // 홈 링크 클릭
